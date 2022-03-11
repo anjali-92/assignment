@@ -55,11 +55,11 @@ def delete_from_bst(root, val):
     return root
 
 
-def print_bst_inorder(root, stack):
+def print_bst_inorder(root, output):
     if root:
-        print_bst_inorder(root.left, stack)
-        stack.append(root.value)
-        print_bst_inorder(root.right, stack)
+        print_bst_inorder(root.left, output)
+        output.append(root.value)
+        print_bst_inorder(root.right, output)
 
 
 if __name__ == '__main__':
@@ -74,7 +74,6 @@ if __name__ == '__main__':
         
         choice = int(input())
         if choice != 1 and choice != 2:
-            print('breaking ', type(choice))
             break
 
         if choice == 1:            
@@ -84,6 +83,6 @@ if __name__ == '__main__':
             value = int(input('Enter value to delete.  '))
             root = delete_from_bst(root, value)
 
-        stack = []
-        print_bst_inorder(root, stack)
-        print(stack)
+        output = []
+        print_bst_inorder(root, output)
+        print(output)
