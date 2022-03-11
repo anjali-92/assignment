@@ -71,8 +71,12 @@ if __name__ == '__main__':
                1. Insert value into BST \n
                2. Delete value from BST \n
                3. Press any number to terminate''')
-        
-        choice = int(input())
+        try:
+            choice = int(input())
+        except ValueError:
+            print("Please enter valid choice")
+            continue
+
         if choice != 1 and choice != 2:
             break
 

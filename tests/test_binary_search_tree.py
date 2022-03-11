@@ -15,15 +15,13 @@ def test_bst_insert():
 
 def test_bst_delete():
     root = None
-    
     for element in td.insert_elements:
         root = bst.insert_into_bst(root, element)
-    
-    before_delete_output = []
-    bst.print_bst_inorder(root, before_delete_output)
-    
-    after_delete_output = []
-    root = bst.delete_from_bst(root, 13)
-    bst.print_bst_inorder(root, after_delete_output)
 
-    assert before_delete_output != after_delete_output
+    # tests delete output
+    after_delete_exp_output = [10, 12, 13, 24]
+    for element in td.delete_elements:
+        root = bst.delete_from_bst(root, element)
+    after_delete_output = []
+    bst.print_bst_inorder(root, after_delete_output)
+    assert after_delete_exp_output == after_delete_output
