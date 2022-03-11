@@ -9,6 +9,11 @@ Go the directory.
 $ cd assignments
 ```
 
+## Run tests
+```bash
+$ pytest
+```
+
 ## To test code interactively
 a) Sort tuples with priority. 
 ```bash
